@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--/* Alerts */-->
+<div th:if="${param.error}" class="alert alert-danger text-center mt-2">
+    Invalid username or password.
+</div>
+<div th:if="${param.logout}" class="alert alert-warning text-center mt-2">
+    You have been logged out.
+</div>
+<h1>Login</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center"></h5>
+                    <form class="form-signin" th:action="@{/login}" method="post" >
+                        <div class="form-label-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username"  class="form-control" placeholder="(Enter username)" required autofocus>
+                        </div>
+                        <div class="form-label-group mt-3">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="(Enter password)" required>
+                        </div>
+                        <br>
+                        <button class="btn btn-lg btn-success btn-block" type="submit" value="Log In"><i class="fas fa-door-open mr-2"></i>Log In</button>
+                        <hr class="my-4">
+                        <a href="/register" class="ml-2">Don't have an account? Roll over here!</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
