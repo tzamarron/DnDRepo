@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<head th:replace="partials/main :: head('Login')"></head>
 <body>
+<!--/* Nav bar */-->
+<div th:replace="partials/main :: navbar"></div>
+
 <!--/* Alerts */-->
 <div th:if="${param.error}" class="alert alert-danger text-center mt-2">
     Invalid username or password.
@@ -13,14 +13,21 @@
 <div th:if="${param.logout}" class="alert alert-warning text-center mt-2">
     You have been logged out.
 </div>
+
+<!--/* Header */-->
 <h1>Login</h1>
 
+<!--/* Main Container Start */-->
 <div class="container">
     <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <!--/* Card Start */-->
             <div class="card card-signin my-5">
+                <!--/* Card Body Start */-->
                 <div class="card-body">
+                    <!--/* Card Title */-->
                     <h5 class="card-title text-center"></h5>
+                    <!--/* Form Start */-->
                     <form class="form-signin" th:action="@{/login}" method="post" >
                         <div class="form-label-group">
                             <label for="username">Username</label>
@@ -35,10 +42,21 @@
                         <hr class="my-4">
                         <a href="/register" class="ml-2">Don't have an account? Roll over here!</a>
                     </form>
+                    <!--/* Form End */-->
                 </div>
+                <!--/* Card Body End */-->
             </div>
+            <!--/* Card End */-->
         </div>
     </div>
 </div>
+<!--/* Main Container End */-->
+
+<!--/* Scripts */-->
+<div th:replace="partials/main :: scripts"></div>
+
+<!--/* Footer */-->
+<div th:replace="partials/main :: footer"></div>
+
 </body>
 </html>

@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Enter into a world...</title>
-</head>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="partials/main :: head('Welcome Page')"></head>
 <body>
-<!-- Navbar -->
+<!--/* Nav bar */-->
+<div th:replace="partials/main :: navbar"></div>
 
+<!--/* Header */-->
 <h1 class="text-center">DnD Roles and More</h1>
 
+<!--/* Scripts */-->
+<div th:replace="partials/main :: scripts"></div>
 
+<!--/* Footer */-->
+<div th:replace="partials/main :: footer"></div>
 
 </body>
 </html>
