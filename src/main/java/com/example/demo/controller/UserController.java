@@ -70,6 +70,7 @@ public class UserController {
     }
 
     // Profile Get Mapping
+    @GetMapping("/profile")
     public String loadProfile() {
         // Send to HTML
         return "user/profile";
