@@ -11,8 +11,9 @@ public class CharRace {
     @Column
     private String name;
 
-    @Column
-    private String abilityScore;
+    @OneToOne
+    @MapsId
+    private AbilityScore abilityScore;
 
     @Column
     private String speed;
@@ -40,7 +41,7 @@ public class CharRace {
         this.name = name;
     }
 
-    public void setAbilityScore(String abilityScore) {
+    public void setAbilityScore(AbilityScore abilityScore) {
         this.abilityScore = abilityScore;
     }
 
