@@ -3,7 +3,7 @@ package com.example.demo.model;
 import javax.persistence.*;
 
 @Entity
-public class Type {
+public class CharRace {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -29,7 +29,7 @@ public class Type {
     @Column
     private String languages;
 
-    public Type() {
+    public CharRace() {
     }
 
     public void setId(long id) {

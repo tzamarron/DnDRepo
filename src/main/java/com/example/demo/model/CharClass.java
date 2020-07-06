@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Role {
+public class CharClass {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -27,7 +27,7 @@ public class Role {
     @Column
     private String savingThrow;
 
-    public Role() {
+    public CharClass() {
     }
 
     public long getId() {
